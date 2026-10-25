@@ -1,0 +1,441 @@
+{
+  "categories": {
+    "sector": [
+      "sector 54",
+      "new"
+    ],
+    "property_type": [
+      "flat",
+      "house"
+    ],
+    "balcony": [
+      "1",
+      "3+"
+    ],
+    "agePossession": [
+      "Relatively New",
+      "New Property"
+    ],
+    "furnishing_type": [
+      "semifurnished",
+      "unfurnished"
+    ],
+    "floor_category": [
+      "High-Rise",
+      "Low-Rise"
+    ],
+    "luxury_category": [
+      "Luxury",
+      "Premium"
+    ]
+  },
+  "prediction": {
+    "predicted_price_inr": 24500000,
+    "predicted_price": 24500000,
+    "formatted_price": "INR 2.45 Cr",
+    "log_prediction": 1.238,
+    "valuation_range": {
+      "lower_bound": 22000000,
+      "upper_bound": 28000000,
+      "mae_pct": 19.48,
+      "q90_residual": 0.1687,
+      "confidence_level": "80% Empirical Prediction Interval"
+    }
+  },
+  "recommendations": [
+    {
+      "property_id": "e2e:1",
+      "price_inr": 22000000,
+      "price": 22000000,
+      "built_up_area": 2100,
+      "bedRoom": 3,
+      "bathroom": 2,
+      "sector": "sector 54",
+      "match_percentage": 92.4,
+      "vector_match_percentage": 94.2,
+      "property_type": "flat",
+      "luxury_category": "Luxury",
+      "floor_category": "High-Rise",
+      "agePossession": "Relatively New",
+      "sector_tier": "Premium Luxury",
+      "sector_avg_price_per_sqft": 12000,
+      "sector_median_price_per_sqft": 11500,
+      "amenities": {
+        "Servant room": true,
+        "Store room": false
+      },
+      "key_feature_tags": [
+        "3 BHK",
+        "Luxury"
+      ],
+      "comparison_highlights": []
+    }
+  ],
+  "analytics": {
+    "kpis": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "total_listings": 20,
+      "sector_count": 2,
+      "avg_price_cr": 2.5,
+      "median_price_per_sqft_inr": 11500,
+      "top_luxury_sector": {
+        "sector": "sector 54",
+        "listing_count": 20
+      },
+      "avg_price_by_property_type": [
+        {
+          "property_type": "flat",
+          "avg_price_cr": 2.5,
+          "listing_count": 20
+        }
+      ]
+    },
+    "geospatial": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "sectors": [
+        {
+          "sector": "sector 54",
+          "listing_count": 20,
+          "tier": "premium",
+          "score": 90,
+          "median_price_cr": 2.45,
+          "avg_price_cr": 2.5,
+          "avg_price_per_sqft_inr": 12000,
+          "entry_price_cr": 2,
+          "luxury_share_percent": 40,
+          "dominant_property_type": "flat",
+          "possession_distribution": [
+            {
+              "stage": "Relatively New",
+              "listing_count": 20,
+              "share_percent": 100
+            }
+          ],
+          "latitude": 28.45,
+          "longitude": 77.1,
+          "resolution": "sector_polygon",
+          "price_variance_cr2": 0.25,
+          "source_url": "https://www.openstreetmap.org/",
+          "location_note": "Approximate sector reference."
+        },
+        {
+          "sector": "new",
+          "listing_count": 20,
+          "tier": "premium",
+          "score": 90,
+          "median_price_cr": 2.45,
+          "avg_price_cr": 2.5,
+          "avg_price_per_sqft_inr": 12000,
+          "entry_price_cr": 2,
+          "luxury_share_percent": 40,
+          "dominant_property_type": "flat",
+          "possession_distribution": [
+            {
+              "stage": "Relatively New",
+              "listing_count": 20,
+              "share_percent": 100
+            }
+          ],
+          "latitude": 28.4595,
+          "longitude": 77.0266,
+          "resolution": "city_fallback",
+          "price_variance_cr2": 0.25,
+          "source_url": "https://www.openstreetmap.org/",
+          "location_note": "Location 'new' is unresolved."
+        }
+      ],
+      "unmapped_sectors": [],
+      "unresolved_location_labels": [
+        "new"
+      ]
+    },
+    "sector-breakdown": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "sectors": [
+        {
+          "sector": "sector 54",
+          "listing_count": 20,
+          "tier": "premium",
+          "score": 90,
+          "median_price_cr": 2.45,
+          "avg_price_cr": 2.5,
+          "avg_price_per_sqft_inr": 12000,
+          "entry_price_cr": 2,
+          "luxury_share_percent": 40,
+          "dominant_property_type": "flat",
+          "possession_distribution": [
+            {
+              "stage": "Relatively New",
+              "listing_count": 20,
+              "share_percent": 100
+            }
+          ],
+          "latitude": 28.45,
+          "longitude": 77.1,
+          "resolution": "sector_polygon",
+          "price_variance_cr2": 0.25,
+          "source_url": "https://www.openstreetmap.org/",
+          "location_note": "Approximate sector reference."
+        }
+      ]
+    },
+    "floor-price-density": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "groups": []
+    },
+    "utility-room-premium": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "groups": []
+    },
+    "balcony-distribution": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "groups": []
+    },
+    "luxury-vs-possession": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "cells": [],
+      "luxury_categories": [],
+      "age_categories": []
+    },
+    "feature-correlations": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "price_vs_area": [],
+      "price_area_pearson_r": 0.7,
+      "luxury_distribution": [],
+      "age_distribution": [],
+      "floor_distribution": [],
+      "furnishing_types": []
+    }
+  },
+  "insights": {
+    "sector-rankings": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "sectors": [
+        {
+          "sector": "sector 54",
+          "listing_count": 20,
+          "tier": "premium",
+          "score": 90,
+          "median_price_cr": 2.45,
+          "avg_price_cr": 2.5,
+          "avg_price_per_sqft_inr": 12000,
+          "entry_price_cr": 2,
+          "luxury_share_percent": 40,
+          "dominant_property_type": "flat",
+          "possession_distribution": [
+            {
+              "stage": "Relatively New",
+              "listing_count": 20,
+              "share_percent": 100
+            }
+          ],
+          "latitude": 28.45,
+          "longitude": 77.1,
+          "resolution": "sector_polygon",
+          "price_variance_cr2": 0.25,
+          "source_url": "https://www.openstreetmap.org/",
+          "location_note": "Approximate sector reference."
+        },
+        {
+          "sector": "sector 55",
+          "listing_count": 20,
+          "tier": "premium",
+          "score": 90,
+          "median_price_cr": 2.45,
+          "avg_price_cr": 2.5,
+          "avg_price_per_sqft_inr": 12000,
+          "entry_price_cr": 2,
+          "luxury_share_percent": 40,
+          "dominant_property_type": "flat",
+          "possession_distribution": [
+            {
+              "stage": "Relatively New",
+              "listing_count": 20,
+              "share_percent": 100
+            }
+          ],
+          "latitude": 28.45,
+          "longitude": 77.1,
+          "resolution": "sector_polygon",
+          "price_variance_cr2": 0.25,
+          "source_url": "https://www.openstreetmap.org/",
+          "location_note": "Approximate sector reference."
+        },
+        {
+          "sector": "sector 56",
+          "listing_count": 20,
+          "tier": "premium",
+          "score": 90,
+          "median_price_cr": 2.45,
+          "avg_price_cr": 2.5,
+          "avg_price_per_sqft_inr": 12000,
+          "entry_price_cr": 2,
+          "luxury_share_percent": 40,
+          "dominant_property_type": "flat",
+          "possession_distribution": [
+            {
+              "stage": "Relatively New",
+              "listing_count": 20,
+              "share_percent": 100
+            }
+          ],
+          "latitude": 28.45,
+          "longitude": 77.1,
+          "resolution": "sector_polygon",
+          "price_variance_cr2": 0.25,
+          "source_url": "https://www.openstreetmap.org/",
+          "location_note": "Approximate sector reference."
+        },
+        {
+          "sector": "sector 57",
+          "listing_count": 20,
+          "tier": "premium",
+          "score": 90,
+          "median_price_cr": 2.45,
+          "avg_price_cr": 2.5,
+          "avg_price_per_sqft_inr": 12000,
+          "entry_price_cr": 2,
+          "luxury_share_percent": 40,
+          "dominant_property_type": "flat",
+          "possession_distribution": [
+            {
+              "stage": "Relatively New",
+              "listing_count": 20,
+              "share_percent": 100
+            }
+          ],
+          "latitude": 28.45,
+          "longitude": 77.1,
+          "resolution": "sector_polygon",
+          "price_variance_cr2": 0.25,
+          "source_url": "https://www.openstreetmap.org/",
+          "location_note": "Approximate sector reference."
+        },
+        {
+          "sector": "sector 58",
+          "listing_count": 20,
+          "tier": "premium",
+          "score": 90,
+          "median_price_cr": 2.45,
+          "avg_price_cr": 2.5,
+          "avg_price_per_sqft_inr": 12000,
+          "entry_price_cr": 2,
+          "luxury_share_percent": 40,
+          "dominant_property_type": "flat",
+          "possession_distribution": [
+            {
+              "stage": "Relatively New",
+              "listing_count": 20,
+              "share_percent": 100
+            }
+          ],
+          "latitude": 28.45,
+          "longitude": 77.1,
+          "resolution": "sector_polygon",
+          "price_variance_cr2": 0.25,
+          "source_url": "https://www.openstreetmap.org/",
+          "location_note": "Approximate sector reference."
+        },
+        {
+          "sector": "sector 59",
+          "listing_count": 20,
+          "tier": "premium",
+          "score": 90,
+          "median_price_cr": 2.45,
+          "avg_price_cr": 2.5,
+          "avg_price_per_sqft_inr": 12000,
+          "entry_price_cr": 2,
+          "luxury_share_percent": 40,
+          "dominant_property_type": "flat",
+          "possession_distribution": [
+            {
+              "stage": "Relatively New",
+              "listing_count": 20,
+              "share_percent": 100
+            }
+          ],
+          "latitude": 28.45,
+          "longitude": 77.1,
+          "resolution": "sector_polygon",
+          "price_variance_cr2": 0.25,
+          "source_url": "https://www.openstreetmap.org/",
+          "location_note": "Approximate sector reference."
+        }
+      ],
+      "limited_sample_sectors": [],
+      "methodology": {
+        "premium": "Snapshot price and luxury-share screen."
+      }
+    },
+    "summary-narratives": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "title": "Your executive market brief",
+      "generation": "Deterministic snapshot summary",
+      "bullets": [
+        {
+          "id": "premium",
+          "badge": "Premium benchmark",
+          "sector": "sector 54",
+          "text": "Sector 54 is a premium snapshot benchmark."
+        }
+      ],
+      "takeaways": [
+        "Verify property details."
+      ]
+    },
+    "valuation-alerts": {
+      "meta": {
+        "filtered_rows": 20,
+        "dataset_rows": 3554,
+        "source": "e2e-snapshot.csv"
+      },
+      "sectors": [],
+      "layout_comparisons": [],
+      "bedroom_comparisons": [],
+      "buyer_checklist": [
+        "Verify documents."
+      ],
+      "methodology": "Snapshot comparisons."
+    }
+  }
+}

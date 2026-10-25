@@ -1,0 +1,15 @@
+﻿# Final application wiring
+
+The header brand opens `/predictor`; `/analytics` and `/insights` are browser-history routes. The retired `/recommendations` URL redirects to `/predictor`. Root `/` retains the analytics landing page. Production static hosting must rewrite these SPA paths to `index.html` while serving `/assets/*`, `/manifest.json`, and `/sw.js` as files.
+
+Navigation uses the top header only; the optional sidebar has been removed. The supplied PNG family is served from `client/public/assets`: `logo.png`, `logo-dark.png`, `logo-vertical.png`, `favicon.png`, `logo-navy.png`, `logo-white.png`, and `icon-512.png`. Header branding swaps between the light/dark logos through the shared theme store. The favicon and manifest use `image/png`. The supplied app icon is actually 1254 ? 1254, so the manifest declares its real dimensions rather than inferring 512 from its filename. The install button appears only when the browser supplies an install prompt. The service worker is production-only, requires HTTPS or localhost, and caches the application shell/assets without caching API calls or predictions. Installation availability remains browser-dependent.
+
+The authoritative serving model is `artifacts/tuned_v1/xgboost_model.json`, not a nonexistent `.pkl`. It remains checksum-validated with `preprocessor.pkl`. `valuation_metrics.json` supplies Q10/Q90 residuals, MAE percentage and model/preprocessor hashes. `recommender_pipeline.pkl` is checked against the preserved `property_embeddings.pkl` for source, IDs, feature names and embedding values before recommendations are served. These trusted artifacts remain server-local and are not exposed as downloadable web endpoints.
+
+Public orchestration remains `/api/predict`, `/api/analytics/*`, `/api/insights/*`, and `/api/recommend/{contextual,similar}`, with Express forwarding to FastAPI. Health/schema options remain dynamic. No backend URL was moved into brand or PWA assets.
+
+The ambiguous dataset label `new` has no verifiable sector coordinates. It is now listed under unmapped locations rather than plotted at a fabricated city-center position. Other normalized sectors/localities retain their source references; all labels remain available to non-map analytics and recommendations.
+
+Core Cypress IDs remain stable. The suite includes direct Predictor routes, brand assets, manifest MIME types and a one-use install prompt test, in addition to module workflows and nested-modal scroll cleanup. See `client/cypress/README.md` for isolated-server test commands.
+
+The floating top-right theme switcher is the only theme control. It portals into the active native dialog to remain above top-layer modals and usable by keyboard. Logo and toggle subscribe to a shared theme store without re-rendering the dashboard. Theme selection persists in local storage. The sticky three-tab header supports keyboard navigation. Recommendations remain integrated into Predictor, Analytics and Insights; there is no separate Recommendations page. There is no sidebar. Service-worker shell cache v2 uses the PNG asset paths.

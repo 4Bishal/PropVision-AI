@@ -1,281 +1,95 @@
-# 🏠 PropVision AI
+﻿# PropVision AI — Real Estate Valuation & Recommender Platform
 
-**An end-to-end AI-powered real estate intelligence platform that transforms raw property listing data into predictive insights and personalized recommendations.**
+## Executive Overview
 
-[![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange.svg)](https://scikit-learn.org/)
-[![XGBoost](https://img.shields.io/badge/XGBoost-Regression-brightgreen.svg)](https://xgboost.readthedocs.io/)
-[![Status](https://img.shields.io/badge/status-in--development-yellow.svg)]()
+PropVision AI is a Gurgaon real estate intelligence suite combining property valuation, geographic analytics, sector narratives and content-based recommendations. The React dashboard turns a processed property snapshot into interpretable estimates and comparisons, with Express coordinating requests to a Python ML service.
 
----
+Analytics describe a historical listing dataset rather than live inventory or transaction prices. Estimates and similarity scores support exploration; they are not guarantees of sale value or investment returns.
 
-## 📌 Overview
+## Architecture
 
-PropVision AI is a real estate analytics and prediction platform built on a self-scraped dataset from **99acres**. It takes raw, semi-structured property listings and turns them into structured, high-value features that power a **house price prediction model** and a **content-based property recommendation engine**.
-
-The project follows a complete data science lifecycle — from data collection and cleaning through EDA, feature engineering, model optimization, and (eventually) a full-stack application layer.
-
-```
-Data Collection → Data Cleaning → EDA → Feature Engineering →
-ML Modeling → Evaluation → Recommendation System → Deployment
+```text
+FastAPI ML Service       ↔       Express Orchestrator       ↔       React/Vite Dashboard
+Python / app/                   Node.js / server/                   client/
+XGBoost + fitted transforms     Validation and API error mapping    Valuation and recommendations
+Residual-based intervals       ML proxy and metadata cache         Leaflet maps and sector insights
+Cosine recommendations         MongoDB connection/model            Responsive light/dark UI
+          ↕
+artifacts/tuned_v1/ + data/processed/ + data/reference/
 ```
 
----
+The browser sends raw property features to Express. FastAPI owns preprocessing, inference and artifact validation. Model outputs in `log1p(crores)` are converted to INR once in Python. MongoDB is required by the Express startup path; ML inference and snapshot analytics read local files.
 
-## ✨ Key Features
+## Key Modules
 
-- **Automated data cleaning** of noisy, semi-structured real estate listings (e.g. converting `₹1.5 Cr` → `15000000`)
-- **Regex-based feature extraction** to parse mixed area fields into distinct, structured columns
-- **Price prediction** using tree-based ensemble models, including a deep dive into XGBoost internals
-- **Content-based recommendation engine** for suggesting properties based on user preferences
-- Designed with a clear path toward a full **MERN-stack** application layer
+1. **Price Predictor:** tuned XGBoost valuation from 12 raw features, with an **80% Empirical Prediction Interval** using $Q_{10}/Q_{90}$ of five-fold cross-validation log residuals. Bounds are asymmetric after conversion to INR. Coverage is nominal rather than independently validated: hyperparameters were previously tuned on this dataset.
+2. **GeoMap Analytics:** Leaflet maps across **115 Gurgaon sector/locality labels**, with sector statistics and feature comparisons. Coordinates include normalized references and disclosed fallback positions; the ambiguous `new` label uses a city-level fallback.
+3. **Market Insights Sector Narrative Engine:** deterministic, evidence-based summaries, sector tiers, asking-price distribution alerts and layout comparisons. Narratives use snapshot aggregates rather than an external language model.
+4. **Content-Based Recommender Engine:** cosine vector similarity over saved structured property embeddings, weighted by learned price relevance. Similar-property ranking blends 75% weighted cosine and 25% price proximity; contextual search applies sector/budget constraints and includes price proximity when a target price is supplied. Vector similarity and blended match scores have separate meanings.
 
----
+## Quickstart
 
-## 🗂️ Table of Contents
+Use Python 3.13 and Node.js 22.15+ with the checked-in dependency files. Run each service in a separate terminal. Preserve existing environment files and the complete `artifacts/tuned_v1/` bundle.
 
-- [Data Collection](#-data-collection)
-- [Data Preprocessing](#-data-preprocessing)
-- [Exploratory Data Analysis](#-exploratory-data-analysis-eda)
-- [Feature Engineering](#-feature-engineering)
-- [Machine Learning](#-machine-learning)
-- [Model Evaluation](#-model-evaluation)
-- [Recommendation System](#-recommendation-system)
-- [Tech Stack](#-tech-stack)
-- [Project Philosophy](#-project-philosophy)
-- [Roadmap](#-roadmap)
+### 1. ML Microservice
 
----
+This checkout implements FastAPI in `app/`, with Python requirements at the repository root. Run from the root:
 
-## 📊 Data Collection
-
-Property listing data was **self-scraped** from [99acres](https://www.99acres.com/), including attributes such as:
-
-- Location, price, area, area type
-- Bedrooms, bathrooms, property type
-- Furnishing status, amenities
-- Builder information, possession details
-
-The raw data was semi-structured and required significant cleaning before it could be used for modeling.
-
----
-
-## 🧹 Data Preprocessing
-
-**1. Missing Value Handling**
-- Identification of missing values across columns
-- Removal of unnecessary/irrelevant columns
-- Imputation of missing numerical and categorical values
-- Handling of inconsistent entries
-
-**2. Data Cleaning**
-- Removing duplicate records
-- Standardizing text formats
-- Converting numerical values stored as strings into usable numeric types
-- Stripping irrelevant characters
-
-**Example transformation:**
-
-| Raw Value | Cleaned Value |
-|---|---|
-| `₹1.5 Cr` | `15000000` |
-
----
-
-## 🔎 Exploratory Data Analysis (EDA)
-
-EDA was conducted to surface patterns and inform feature engineering:
-
-- **Price Distribution** — average price, variance, outlier detection, most expensive locations
-- **Location Analysis** — regional price patterns and property availability by location
-- **Feature Relationships** — Area vs. Price, Bedrooms vs. Price, Location vs. Price, Property Type vs. Price
-
-**Visualization techniques used:** histograms, scatter plots, box plots, bar charts, correlation heatmaps.
-
----
-
-## 🛠️ Feature Engineering
-
-### Area Dimensions Extraction
-
-Raw listings often embedded area information inside free-text fields, e.g.:
-
-```
-1200 sqft Super Built-up Area
-900 sqft Carpet Area
+```sh
+python -m venv .venv
+# Activate .venv: Windows PowerShell: .\.venv\Scripts\Activate.ps1
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --port 8000
 ```
 
-Using **regular expressions** and text processing, this information was parsed into clean, structured numerical features:
+If `.venv` exists, reuse it. The alternate-layout command `cd ml_service && pip install -r requirements.txt && uvicorn main:app --port 8000` does **not** apply to this checkout: there is no `ml_service/` directory. Health and OpenAPI are available at http://127.0.0.1:8000/health and http://127.0.0.1:8000/docs.
 
-- `Super_Built_Up_Area`
-- `Carpet_Area`
-- `Built_Up_Area`
+The serving model is `artifacts/tuned_v1/xgboost_model.json`, accompanied by `preprocessor.pkl` and metadata. Recommendations require `recommender_pipeline.pkl` and `property_embeddings.pkl`; interval statistics live in `valuation_metrics.json`. Keep these matched artifacts together. Only deserialize trusted local model bundles.
 
-### Area Feature Refinement
-- Conversion to numerical format
-- Handling of missing area types
-- Removing inconsistencies
-- Feature normalization
+### 2. Express Backend
 
----
+Create `server/.env` from `server/.env.example` on first setup, without overwriting an existing file. Set `MONGO_URI` for an available MongoDB instance and `FASTAPI_URL=http://127.0.0.1:8000`. Then run:
 
-## 🤖 Machine Learning
-
-### Problem Formulation
-
-| Attribute | Value |
-|---|---|
-| **Task** | Supervised Learning |
-| **Problem Type** | Regression |
-| **Target Variable** | Property Price |
-
-### Pipeline
-
-```
-Raw Dataset → Feature Selection → Train-Test Split → Model Training →
-Hyperparameter Optimization → Evaluation → Final Model Selection
+```sh
+cd server && npm install && npm run dev
 ```
 
-### Models Explored
+Express defaults to http://127.0.0.1:5000 and starts after MongoDB connects. Check `/api/health`. Core routes include `/api/predict`, `/api/schema-options`, `/api/analytics/*`, `/api/insights/*` and `/api/recommend/*`.
 
-**Linear Models (baseline)**
-- Linear Regression
-- Ridge Regression
-- Lasso Regression
+### 3. React Frontend
 
-**Tree-Based Models** (to capture nonlinear relationships in real estate data)
-- Decision Tree Regression
-- Random Forest Regression
-- Gradient Boosting
-- XGBoost Regression
-
-### Understanding XGBoost
-
-The project involved an in-depth study of gradient boosting and XGBoost internals:
-
-- Sequential tree building and residual error correction
-- Weak learners combined via ensemble learning
-- Objective function, loss function, gradient and Hessian approximation
-- Tree construction and regularization
-
-**Prediction formula:**
-
-$$\hat{y}_i = \sum_{k=1}^{K} f_k(x_i)$$
-
-where `K` is the number of trees and `f_k` is an individual decision tree.
-
-**Objective function:**
-
-$$Obj(\theta) = Loss + \Omega(Model)$$
-
-- **Loss** measures prediction error
-- **Ω (Regularization)** controls model complexity to reduce overfitting
-
-### Hyperparameter Tuning
-
-| Parameter | Purpose |
-|---|---|
-| `n_estimators` | Number of boosting rounds |
-| `learning_rate` | Contribution of each tree |
-| `max_depth` | Tree complexity control |
-| `lambda`, `alpha`, `gamma` | Regularization to reduce overfitting |
-| `subsample`, `colsample_bytree` | Row/feature sampling for better generalization |
-
----
-
-## 📈 Model Evaluation
-
-Regression performance is assessed using:
-
-- **Mean Squared Error (MSE)** — average squared prediction error
-- **Root Mean Squared Error (RMSE)** — error in original price units
-- **R² Score** — proportion of variance explained by the model
-
-**Example result:**
-
-```
-R² = 0.83
-RMSE = 0.21
+```sh
+cd client && npm install && npm run dev
 ```
 
-> The model explains approximately 83% of the variance in property prices in the dataset.
+Open Vite's printed URL, normally http://127.0.0.1:5173. The default API base is `http://localhost:5000`; use `client/.env.local` based on `.env.example` to change `VITE_API_URL`. All `VITE_*` configuration is public in the built browser application. On Windows, use `npm.cmd` if PowerShell blocks `npm.ps1`. For reproducible lockfile installs, `npm ci` can replace `npm install`.
 
----
+## Testing
 
-## 🎯 Recommendation System
+Start Vite, then open the end-to-end runner in a separate terminal:
 
-A **content-based recommendation engine** is planned/developed to suggest properties based on:
-
-- Location
-- Budget
-- Property characteristics (area, bedrooms, amenities)
-
-### Envisioned User Flow
-
-```
-User enters preferences
-        ↓
-System analyzes requirements
-        ↓
-ML model predicts prices
-        ↓
-Recommendation engine finds suitable properties
-        ↓
-User receives intelligent property suggestions
+```sh
+cd client && npm run test:e2e
 ```
 
----
+For headless execution, use `npm run test:e2e:headless` from `client/`. The Cypress suite uses deterministic API fixtures and intercepted map tiles; it does not require Express, FastAPI or MongoDB. See [the Cypress guide](client/cypress/README.md) for local cache and base URL settings.
 
-## 🧰 Tech Stack
+Additional checks from the repository root:
 
-**Data Science**
-- Python, Pandas, NumPy, Matplotlib, Seaborn
-
-**Machine Learning**
-- Scikit-learn, XGBoost
-
-**Data Collection**
-- Custom web scraping
-
-**Future Application Layer**
-- **Frontend:** React.js
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-
----
-
-## 💡 Project Philosophy
-
-PropVision AI is built around an engineering-first mindset rather than a "train a model, report accuracy" approach:
-
-```
-Real-world Data → Data Understanding → Feature Engineering →
-Model Selection → Optimization → Deployment → User Application
+```sh
+pip install -r requirements-dev.txt
+python -m pytest tests -q
+npm --prefix server test
+npm --prefix client test
+npm --prefix client run build
 ```
 
-The goal is to build a complete, production-minded AI product — not just a notebook experiment.
+## Project Reference
 
----
+- [FastAPI endpoints and statistical artifacts](app/README.md)
+- [Analytics and map sources](docs/ANALYTICS_MODULE.md)
+- [Market Insights scoring and limitations](docs/MARKET_INSIGHTS.md)
+- [Model contract and units](docs/PRODUCTION_TECHNICAL_SPEC.md)
 
-## 🗺️ Roadmap
-
-- [x] Web scraping pipeline for 99acres listings
-- [x] Data cleaning & preprocessing
-- [x] Exploratory Data Analysis
-- [x] Feature engineering (area extraction, normalization)
-- [x] Baseline and tree-based regression models
-- [x] XGBoost model tuning & evaluation
-- [ ] Content-based recommendation engine (in progress)
-- [ ] REST API backend (Node.js/Express)
-- [ ] React.js frontend application
-- [ ] Full MERN-stack deployment
-
----
-
-## 📄 License
-
-*This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.*
-
-## 🙋 Author
-
-*Bishal Bhandari / bhandari-bishal.com.np*
+Numbered notebooks and processed dataset stages preserve the research lineage. Export future model versions into a new artifact directory rather than replacing `tuned_v1`. Local credentials, dependencies, generated caches and confidential documentation are excluded through the root `.gitignore`.
