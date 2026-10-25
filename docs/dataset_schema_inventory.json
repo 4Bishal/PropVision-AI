@@ -1,0 +1,892 @@
+{
+  "data\\processed\\flats_cleaned.csv": {
+    "rows": 2997,
+    "columns": [
+      {
+        "name": "property_name",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "property_type",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "society",
+        "dtype": "str",
+        "missing": 1
+      },
+      {
+        "name": "price",
+        "dtype": "float64",
+        "missing": 1
+      },
+      {
+        "name": "price_per_sqft",
+        "dtype": "float64",
+        "missing": 1
+      },
+      {
+        "name": "area",
+        "dtype": "float64",
+        "missing": 1
+      },
+      {
+        "name": "areaWithType",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "bedRoom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "bathroom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "balcony",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "additionalRoom",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "address",
+        "dtype": "str",
+        "missing": 6
+      },
+      {
+        "name": "floorNum",
+        "dtype": "float64",
+        "missing": 2
+      },
+      {
+        "name": "facing",
+        "dtype": "str",
+        "missing": 874
+      },
+      {
+        "name": "agePossession",
+        "dtype": "str",
+        "missing": 1
+      },
+      {
+        "name": "nearbyLocations",
+        "dtype": "str",
+        "missing": 91
+      },
+      {
+        "name": "description",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "furnishDetails",
+        "dtype": "str",
+        "missing": 797
+      },
+      {
+        "name": "features",
+        "dtype": "str",
+        "missing": 407
+      },
+      {
+        "name": "rating",
+        "dtype": "str",
+        "missing": 329
+      }
+    ]
+  },
+  "data\\processed\\gurgaon_properties.csv": {
+    "rows": 3961,
+    "columns": [
+      {
+        "name": "property_name",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "property_type",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "society",
+        "dtype": "str",
+        "missing": 1
+      },
+      {
+        "name": "price",
+        "dtype": "float64",
+        "missing": 20
+      },
+      {
+        "name": "price_per_sqft",
+        "dtype": "float64",
+        "missing": 20
+      },
+      {
+        "name": "area",
+        "dtype": "float64",
+        "missing": 20
+      },
+      {
+        "name": "areaWithType",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "bedRoom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "bathroom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "balcony",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "additionalRoom",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "address",
+        "dtype": "str",
+        "missing": 11
+      },
+      {
+        "name": "floorNum",
+        "dtype": "float64",
+        "missing": 21
+      },
+      {
+        "name": "facing",
+        "dtype": "str",
+        "missing": 1177
+      },
+      {
+        "name": "agePossession",
+        "dtype": "str",
+        "missing": 1
+      },
+      {
+        "name": "nearbyLocations",
+        "dtype": "str",
+        "missing": 207
+      },
+      {
+        "name": "description",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "furnishDetails",
+        "dtype": "str",
+        "missing": 1032
+      },
+      {
+        "name": "features",
+        "dtype": "str",
+        "missing": 709
+      },
+      {
+        "name": "rating",
+        "dtype": "str",
+        "missing": 450
+      }
+    ]
+  },
+  "data\\processed\\gurgaon_properties_cleaned_v1.csv": {
+    "rows": 3803,
+    "columns": [
+      {
+        "name": "property_type",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "society",
+        "dtype": "str",
+        "missing": 1
+      },
+      {
+        "name": "sector",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "price",
+        "dtype": "float64",
+        "missing": 18
+      },
+      {
+        "name": "price_per_sqft",
+        "dtype": "float64",
+        "missing": 18
+      },
+      {
+        "name": "area",
+        "dtype": "float64",
+        "missing": 18
+      },
+      {
+        "name": "areaWithType",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "bedRoom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "bathroom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "balcony",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "additionalRoom",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "floorNum",
+        "dtype": "float64",
+        "missing": 19
+      },
+      {
+        "name": "facing",
+        "dtype": "str",
+        "missing": 1105
+      },
+      {
+        "name": "agePossession",
+        "dtype": "str",
+        "missing": 1
+      },
+      {
+        "name": "nearbyLocations",
+        "dtype": "str",
+        "missing": 177
+      },
+      {
+        "name": "furnishDetails",
+        "dtype": "str",
+        "missing": 981
+      },
+      {
+        "name": "features",
+        "dtype": "str",
+        "missing": 635
+      }
+    ]
+  },
+  "data\\processed\\gurgaon_properties_cleaned_v2.csv": {
+    "rows": 3803,
+    "columns": [
+      {
+        "name": "property_type",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "society",
+        "dtype": "str",
+        "missing": 1
+      },
+      {
+        "name": "sector",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "price",
+        "dtype": "float64",
+        "missing": 18
+      },
+      {
+        "name": "price_per_sqft",
+        "dtype": "float64",
+        "missing": 18
+      },
+      {
+        "name": "area",
+        "dtype": "float64",
+        "missing": 18
+      },
+      {
+        "name": "areaWithType",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "bedRoom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "bathroom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "balcony",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "floorNum",
+        "dtype": "float64",
+        "missing": 19
+      },
+      {
+        "name": "facing",
+        "dtype": "str",
+        "missing": 1105
+      },
+      {
+        "name": "agePossession",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "super_built_up_area",
+        "dtype": "float64",
+        "missing": 1888
+      },
+      {
+        "name": "built_up_area",
+        "dtype": "float64",
+        "missing": 2070
+      },
+      {
+        "name": "carpet_area",
+        "dtype": "float64",
+        "missing": 1859
+      },
+      {
+        "name": "study room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "servant room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "store room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "pooja room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "others",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "furnishing_type",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "luxury_score",
+        "dtype": "int64",
+        "missing": 0
+      }
+    ]
+  },
+  "data\\processed\\gurgaon_properties_missing_value_imputation.csv": {
+    "rows": 3554,
+    "columns": [
+      {
+        "name": "property_type",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "society",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "sector",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "price",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "price_per_sqft",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "bedRoom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "bathroom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "balcony",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "floorNum",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "agePossession",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "built_up_area",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "study room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "servant room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "store room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "pooja room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "others",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "furnishing_type",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "luxury_score",
+        "dtype": "int64",
+        "missing": 0
+      }
+    ]
+  },
+  "data\\processed\\gurgaon_properties_outlier_treated.csv": {
+    "rows": 3555,
+    "columns": [
+      {
+        "name": "Unnamed: 0",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "property_type",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "society",
+        "dtype": "str",
+        "missing": 1
+      },
+      {
+        "name": "sector",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "price",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "price_per_sqft",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "area",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "areaWithType",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "bedRoom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "bathroom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "balcony",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "floorNum",
+        "dtype": "float64",
+        "missing": 17
+      },
+      {
+        "name": "facing",
+        "dtype": "str",
+        "missing": 1011
+      },
+      {
+        "name": "agePossession",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "super_built_up_area",
+        "dtype": "float64",
+        "missing": 1680
+      },
+      {
+        "name": "built_up_area",
+        "dtype": "float64",
+        "missing": 1968
+      },
+      {
+        "name": "carpet_area",
+        "dtype": "float64",
+        "missing": 1715
+      },
+      {
+        "name": "study room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "servant room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "store room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "pooja room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "others",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "furnishing_type",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "luxury_score",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "area_room_ratio",
+        "dtype": "float64",
+        "missing": 0
+      }
+    ]
+  },
+  "data\\processed\\gurgaon_properties_post_feature_selection.csv": {
+    "rows": 3554,
+    "columns": [
+      {
+        "name": "property_type",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "sector",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "bedRoom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "bathroom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "balcony",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "agePossession",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "built_up_area",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "servant room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "store room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "furnishing_type",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "luxury_category",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "floor_category",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "price",
+        "dtype": "float64",
+        "missing": 0
+      }
+    ]
+  },
+  "data\\processed\\gurgaon_properties_post_feature_selection_v2.csv": {
+    "rows": 3554,
+    "columns": [
+      {
+        "name": "property_type",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "sector",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "bedRoom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "bathroom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "balcony",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "agePossession",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "built_up_area",
+        "dtype": "float64",
+        "missing": 0
+      },
+      {
+        "name": "servant room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "store room",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "furnishing_type",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "floor_category",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "luxury_category",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "price",
+        "dtype": "float64",
+        "missing": 0
+      }
+    ]
+  },
+  "data\\processed\\house_cleaned.csv": {
+    "rows": 964,
+    "columns": [
+      {
+        "name": "property_name",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "property_type",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "society",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "price",
+        "dtype": "float64",
+        "missing": 19
+      },
+      {
+        "name": "price_per_sqft",
+        "dtype": "float64",
+        "missing": 19
+      },
+      {
+        "name": "area",
+        "dtype": "float64",
+        "missing": 19
+      },
+      {
+        "name": "areaWithType",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "bedRoom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "bathroom",
+        "dtype": "int64",
+        "missing": 0
+      },
+      {
+        "name": "balcony",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "additionalRoom",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "address",
+        "dtype": "str",
+        "missing": 5
+      },
+      {
+        "name": "floorNum",
+        "dtype": "float64",
+        "missing": 19
+      },
+      {
+        "name": "facing",
+        "dtype": "str",
+        "missing": 303
+      },
+      {
+        "name": "agePossession",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "nearbyLocations",
+        "dtype": "str",
+        "missing": 116
+      },
+      {
+        "name": "description",
+        "dtype": "str",
+        "missing": 0
+      },
+      {
+        "name": "furnishDetails",
+        "dtype": "str",
+        "missing": 235
+      },
+      {
+        "name": "features",
+        "dtype": "str",
+        "missing": 302
+      },
+      {
+        "name": "rating",
+        "dtype": "str",
+        "missing": 121
+      }
+    ]
+  }
+}

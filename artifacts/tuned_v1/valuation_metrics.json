@@ -1,0 +1,14 @@
+{
+  "schema_version": "propvision-valuation-v1",
+  "source_sha256": "dbb307558a874f186342c896c6053c60a01234b42c9a653bf6b18e62797f29cb",
+  "model_sha256": "0cf90e4dd808d7a3c0cf50c943e5142d6a5ca106d36341b7bbca048fb006c6a8",
+  "preprocessor_sha256": "1b1c65adb0a7e77e8581c7b6b738a52178d32959278014c1bf3a8436db6488fe",
+  "rows": 3554,
+  "cv_folds": 5,
+  "random_state": 42,
+  "limitation": "Hyperparameters previously tuned on this dataset; CV coverage is nominal, not independent validation.",
+  "q10_residual": -0.162778954186567,
+  "q90_residual": 0.16870498077461288,
+  "mae_percentage": 19.479708625811682,
+  "residual_definition": "log1p(actual_crore) - log1p(oof_prediction_crore)"
+}
