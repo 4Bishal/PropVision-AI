@@ -1,4 +1,55 @@
-folder_structure.txt
-.ipynb_checkpoints/
+# Secrets (example configuration remains versioned)
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
 
-testfolder/
+# Python environments and generated caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+htmlcov/
+.coverage*
+
+# JavaScript dependencies, build output, and test caches
+node_modules/
+client/node_modules/
+server/node_modules/
+dist/
+client/dist/
+client/build/
+.cypress-cache/
+.eslintcache
+coverage/
+.vite/
+
+# Local/editor/OS scratch files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+*.tmp
+*.temp
+*.bak
+~$*
+propvision-export-*/
+
+# Cypress runtime and failure artifacts
+client/.cache/
+client/cypress/screenshots/
+client/cypress/videos/
+client/cypress/downloads/
+
+# Private confidential documentation (keep local only)
+INTERVIEW_DOSSIER.md
+docs/private/

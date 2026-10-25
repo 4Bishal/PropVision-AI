@@ -1,0 +1,19 @@
+{
+  "short_name": "PropVision",
+  "name": "PropVision AI \u2014 Real Estate Intelligence",
+  "icons": [
+    {
+      "src": "/assets/icon-512.png",
+      "type": "image/png",
+      "sizes": "1254x1254",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/predictor",
+  "scope": "/",
+  "id": "/predictor",
+  "background_color": "#F8FAF8",
+  "theme_color": "#0F172A",
+  "display": "standalone",
+  "orientation": "portrait"
+}
