@@ -1,0 +1,57 @@
+{
+  "source": "OpenStreetMap / Nominatim",
+  "attribution_url": "https://www.openstreetmap.org/copyright",
+  "coordinates": {
+    "sector 8": {
+      "latitude": 28.4598966,
+      "longitude": 77.0198043,
+      "source_url": "https://www.openstreetmap.org/relation/3597335",
+      "source_name": "Sector 8, Gurgaon, Gurugram, Haryana, India",
+      "method": "OSM locality/corridor reference",
+      "query_url": "https://nominatim.openstreetmap.org/search?q=Sector+8%2C+Gurugram%2C+Haryana&format=jsonv2&limit=1&countrycodes=in&viewbox=76.75%2C28.65%2C77.25%2C28.25&bounded=1"
+    },
+    "sector 9": {
+      "latitude": 28.4621791,
+      "longitude": 77.0000718,
+      "source_url": "https://www.openstreetmap.org/node/2733423637",
+      "source_name": "Sector 9, Gurgaon",
+      "method": "verified OSM place node",
+      "query_url": "https://api.openstreetmap.org/api/0.6/node/2733423637.json"
+    },
+    "gwal pahari": {
+      "latitude": 28.4326344,
+      "longitude": 77.1480585,
+      "source_url": "https://www.openstreetmap.org/way/1368612439",
+      "source_name": "Gwal Pahari, Sohna, Gurugram, Haryana, India",
+      "method": "OSM locality/corridor reference",
+      "query_url": "https://nominatim.openstreetmap.org/search?q=Gwal+Pahari%2C+Gurugram&format=jsonv2&limit=1&countrycodes=in&viewbox=76.75%2C28.65%2C77.25%2C28.25&bounded=1"
+    },
+    "sohna road": {
+      "latitude": 28.3999199,
+      "longitude": 77.0451273,
+      "source_url": "https://www.openstreetmap.org/way/1380662666",
+      "source_name": "Sohna Road, Badshahpur, Gurgaon, Gurugram, Haryana, 122101, India",
+      "method": "OSM locality/corridor reference",
+      "query_url": "https://nominatim.openstreetmap.org/search?q=Sohna+Road%2C+Gurugram&format=jsonv2&limit=1&countrycodes=in&viewbox=76.75%2C28.65%2C77.25%2C28.25&bounded=1"
+    },
+    "manesar": {
+      "latitude": 28.3247096,
+      "longitude": 76.9263787,
+      "source_url": "https://www.openstreetmap.org/relation/10398246",
+      "source_name": "Manesar, Gurugram, Haryana, India",
+      "method": "OSM locality/corridor reference",
+      "query_url": "https://nominatim.openstreetmap.org/search?q=Manesar%2C+Gurugram&format=jsonv2&limit=1&countrycodes=in&viewbox=76.75%2C28.65%2C77.25%2C28.25&bounded=1"
+    },
+    "dwarka expressway": {
+      "latitude": 28.4972279,
+      "longitude": 77.004102,
+      "source_url": "https://www.openstreetmap.org/way/1116324313",
+      "source_name": "Dwarka Expressway, Sector 113, Sector 105, Gurgaon, Gurugram, South West Delhi, Haryana, 122006, India",
+      "method": "OSM locality/corridor reference",
+      "query_url": "https://nominatim.openstreetmap.org/search?q=Dwarka+Expressway%2C+Gurugram&format=jsonv2&limit=1&countrycodes=in&viewbox=76.75%2C28.65%2C77.25%2C28.25&bounded=1"
+    }
+  },
+  "validation_note": "Rejected Sector 17A/B search matches naming Sector 62; use parent-sector geometry. Replaced Sector 9 Manesar search match with named Gurgaon place node.",
+  "license": "ODbL 1.0",
+  "retrieved_at": "2026-10-25T04:40:19.139004+00:00"
+}
